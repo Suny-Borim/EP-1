@@ -78,3 +78,4 @@ class PokeSpider(scrapy.Spider):
 #pokemons = self.response
 #pokemons = nova_tabela.to_csv('pokemons.csv', index=False)
 #nova = nova.dropna(axis = 0)
+#nova
