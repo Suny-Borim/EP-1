@@ -30,8 +30,8 @@ class PokeSpider(scrapy.Spider):
         skill1 = response.css('table.vitals-table > tbody > tr:nth-child(6) > td > span:nth-child(1) > a::text').get()
         skill_descrition1 = response.css('table.vitals-table > tbody > tr:nth-child(6) > td > span:nth-child(1) > a[title]::attr(title)').get()
         link_skill2 = response.css('table.vitals-table > tbody > tr:nth-child(6) > td > span:nth-child(3) > a::attr(href)').get()
-        link_skill2 = response.css('table.vitals-table > tbody > tr:nth-child(6) > td > span:nth-child(3) > a::text').get()
-        link_descrition2 = response.css('table.vitals-table > tbody > tr:nth-child(6) > td > span:nth-child(3) > a[title]::attr(title)').get()
+        skill2 = response.css('table.vitals-table > tbody > tr:nth-child(6) > td > span:nth-child(3) > a::text').get()
+        skill_descrition2 = response.css('table.vitals-table > tbody > tr:nth-child(6) > td > span:nth-child(3) > a[title]::attr(title)').get()
 
         if skill1:
             skill_descrition1 = skill_descrition1
@@ -71,8 +71,8 @@ class PokeSpider(scrapy.Spider):
             'skill1': skill1,
             'skill_descrition1': skill_descrition1,
             'link_skill2': link_skill2,
-            'link_skill2': link_skill2,
-            'link_descrition2': link_descrition2,
+            'skill2': skill2,
+            'skill_descrition2': skill_descrition2,
         }
 #pokemons = pd.DataFrame(columns=['link', 'pokemon_id', 'pokemon_name', 'pokemon_weight', 'pokemon_height', 'pokemon_type1', 'pokemon_type2', 'link_evolution1', 'evolution', 'id_evolution1', 'link_evolution2', 'evolution2' 'id_evolution2', 'link_skill1', 'skill1', 'skill_descrition1' 'link_skill2', 'link_skill2', 'link_descrition2']
 #pokemons = self.response
